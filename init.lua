@@ -1,5 +1,6 @@
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", {noremap = true, silent = true})
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
 
