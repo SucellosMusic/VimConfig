@@ -9,7 +9,7 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.scrolloff = 25
+vim.opt.scrolloff = 15
 
 require("config.lazy")
 local builtin = require("telescope.builtin")
@@ -18,13 +18,11 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 local configs = require("nvim-treesitter.configs")
 configs.setup({
-	ensure_installed = { "c", "lua", "cpp", "markdown", "markdown_inline" },
+	ensure_installed = { "c", "lua", "cpp" },
 	sync_install  = false,
 	highlight = {enable = true},
 	indent = {enable = true}
 	})
 
-
-require("config.cmakeconfig")
-
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {silent = true})
+

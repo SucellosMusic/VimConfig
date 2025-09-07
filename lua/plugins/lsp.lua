@@ -8,7 +8,7 @@ return {
 		},
 	config = function()
 		require("mason-lspconfig").setup({
-			ensure_installed = { "lua_ls", "clangd", "marksman" }
+			ensure_installed = { "lua_ls", "clangd" , "pylsp" }
 		})
 	end
 	},
@@ -21,6 +21,10 @@ return {
 			capabilities = capabilities,
 			})
 		lspconfig.clangd.setup({
+			cmd = {"clangd", "--background-index", "--clang-tidy", "--inlay-hints=true"},
+			capabilities = capabilities,
+			})
+		lspconfig.pylsp.setup({
 			capabilities = capabilities,
 			})
 		vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
