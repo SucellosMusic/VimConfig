@@ -24,5 +24,32 @@ configs.setup({
 	indent = {enable = true}
 	})
 
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('pylsp')
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+vim.lsp.config('lua_ls', {
+	capabilities = {capabilities},
+	filetypes = {'lua'}
+})
+
+vim.lsp.config('clangd', {
+	capabilites = {capabilities},
+	cmd = {'clangd', '--header-insertion=never'},
+	filetypes = {'c', 'h' , 'cpp', 'hpp'},
+	})
+
+vim.lsp.config('pyslp', {
+	capabilities = {capabilities},
+	filetypes = {'py', 'pyc', 'pyw', 'pyd', 'pyx', 'pyi', 'pyz'}
+})
+
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'gd', vim.lsp.buf. definition, {})
+vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
+
+
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {silent = true})
 

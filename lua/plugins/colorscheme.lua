@@ -1,4 +1,4 @@
 return
 {
-	{'iagorrr/noctishc.nvim' }
+	{'iagorrr/noctishc.nvim' },
 }
