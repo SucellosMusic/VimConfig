@@ -1,3 +1,6 @@
+vim.opt.termguicolors = true
+vim.opt.cursorline = true
+
 vim.api.nvim_set_keymap("i", "jk", "<ESC>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("i", "<C-j>", "()<Left>", {})
 vim.api.nvim_set_keymap("i", "<C-k>", "<Right>{}<Left>", {})
@@ -18,7 +21,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 local configs = require("nvim-treesitter.configs")
 configs.setup({
-	ensure_installed = { "c", "lua", "cpp" },
+	ensure_installed = { "c", "lua", "cpp", 'make' },
 	sync_install  = false,
 	highlight = {enable = true},
 	indent = {enable = true}
