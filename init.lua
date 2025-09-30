@@ -56,3 +56,4 @@ vim.keymap.set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
 
 vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {silent = true})
 
+vim.cmd.colorscheme "moonfly"
